@@ -3,7 +3,8 @@ name = "warp-core"
 version = "0.1.0"
 edition = "2021"
 
-rustflags=["--cfg=web_sys_unstable_apis"]
+[lib]
+crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 cfg-if = "1"
@@ -13,9 +14,6 @@ log = "0.4"
 wgpu = "0.16"
 pollster = "0.2"
 itertools = "0.10"
-
-[lib]
-crate-type = ["cdylib", "rlib"]
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 console_error_panic_hook = "0.1.7"
