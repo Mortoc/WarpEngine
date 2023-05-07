@@ -14,6 +14,13 @@ log = "0.4"
 wgpu = "0.16"
 pollster = "0.2"
 itertools = "0.10"
+bytemuck = { version = "1.7", features = ["derive"] }
+
+[dependencies.image]
+version = "0.24"
+default-features = false
+features = ["png"]
+
 
 [target.'cfg(target_arch = "wasm32")'.dependencies]
 console_error_panic_hook = "0.1.7"
